@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Blocks - Workspace</title>
+    <meta name="description" content="Un espacio de trabajo interactivo para crear y configurar bloques visuales con diseño premium.">
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Panel -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-logo">
+                    <span class="cube-icon"></span>
+                </div>
+                <h1>Building Blocks</h1>
+            </div>
+            
+            <div class="panel-section">
+                <h2>Creador de Bloques</h2>
+                <div class="control-group">
+                    <label for="block-color">Color del Bloque</label>
+                    <div class="color-picker-wrapper">
+                        <input type="color" id="block-color" value="#6366f1">
+                        <span class="color-value">#6366f1</span>
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <label for="block-size">Tamaño</label>
+                    <select id="block-size">
+                        <option value="small">Pequeño</option>
+                        <option value="medium" selected>Mediano</option>
+                        <option value="large">Grande</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label for="block-shape">Forma</label>
+                    <select id="block-shape">
+                        <option value="square" selected>Cuadrado</option>
+                        <option value="rounded">Bordes Redondeados</option>
+                        <option value="circle">Círculo</option>
+                    </select>
+                </div>
+                
+                <button id="add-block-btn" class="btn btn-primary">
+                    <span class="btn-icon">+</span> Agregar Bloque
+                </button>
+            </div>
+
+            <div class="panel-section">
+                <h2>Configuración</h2>
+                <div class="actions-grid">
+                    <button id="clear-btn" class="btn btn-secondary">Limpiar Lienzo</button>
+                    <button id="save-btn" class="btn btn-secondary">Guardar Config</button>
+                </div>
+            </div>
+
+            <footer class="sidebar-footer">
+                <p>Evolución en progreso</p>
+                <a href="https://github.com/quito83/building-blocks" target="_blank" rel="noopener noreferrer" class="repo-link">Ver GitHub</a>
+            </footer>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="main-content">
+            <header class="workspace-header">
+                <div class="header-info">
+                    <h2>Área de Trabajo</h2>
+                    <p>Haz clic para interactuar con los bloques, arrástralos o crea nuevos desde el panel.</p>
+                </div>
+                <div class="stats">
+                    <div class="stat-card">
+                        <span class="stat-label">Bloques Activos</span>
+                        <span id="block-count" class="stat-value">0</span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="canvas-area">
+                <div id="canvas" class="workspace-canvas">
+                    <!-- Blocks will be dynamically generated here -->
+                    <div class="canvas-placeholder" id="canvas-placeholder">
+                        <div class="placeholder-icon"></div>
+                        <p>El lienzo está vacío. ¡Agrega tu primer bloque!</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>
